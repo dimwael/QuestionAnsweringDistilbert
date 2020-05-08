@@ -4,6 +4,14 @@ import re
 
 
 def scrape_wiki(link):
+    """Scrape the wikipedia link and return paragraphs
+
+    Arguments:
+        link {String} -- Wikipedia link to scrape
+
+    Returns:
+        link, lines -- link : scraped link , lines : list of paragraphs from wikipedia
+    """
     response = requests.get(link)
     lines = []
     if response is not None:

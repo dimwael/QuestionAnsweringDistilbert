@@ -1,6 +1,6 @@
 from scraper import mainscraper
-
-user_question = "How many ballons d'Or does Messi have ?"
+from QA.reader import reader
+user_question = "How many ballons d'Or does Lionel Messi win ?"
 
 # Scraping starts :
 
@@ -10,6 +10,15 @@ fetched_answers = mainscraper.fetch_search_wiki(
 first_answer = fetched_answers[0]
 
 # Check all paragraphs in our scraped results
-for paragraph in first_answer:
-    print(paragraph)
-    print("**************")
+# for paragraph in first_answer:
+#     print(paragraph)
+#     print("**************")
+
+
+# Use the text reader to extract the correct answer
+# testinput is just for testing purposes :
+testinput = first_answer[3]
+
+# Call the text reader :
+answer = reader.answer(user_question, testinput)
+print(answer)

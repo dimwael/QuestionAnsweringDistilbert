@@ -27,4 +27,4 @@ def fetch_search_wiki(user_question, tld='com', lang='en-US', safe='on', stops=1
         print(url)
         link, paragraphs = scrape_wiki(url)
         articles.append(paragraphs)
-    return articles, url
+    return articles

@@ -26,7 +26,6 @@ def rank_paragraphs(question, paragraphs):
                        vocabulary=None)
     df["content"] = df["paragraphs"].apply(lambda x: " ".join(x))
     df = _expand_paragraphs(df)
-
     bm.fit(df=df)
 
     best_idx_scores = bm.predict(query=question)

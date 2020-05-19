@@ -1,0 +1,7 @@
+__pycache__
+.vscode
+QA/__pycache__
+QA/reader/__pycache__
+QA/ranker/__pycache__
+scrapers/__pycache__
+test.py

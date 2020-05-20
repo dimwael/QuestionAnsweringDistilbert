@@ -15,4 +15,4 @@ def answer_question(user_question):
 
     # Call the text reader :
     answer = reader.answer(user_question, retrieved[0]['context'])
-    return str(answer), retrieved, url
+    return str(answer), retrieved[0]['context'], url

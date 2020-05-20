@@ -5,15 +5,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render_template("main_page.html")
+    return render_template("index.html")
 
 
 @app.route('/question', methods=['GET', 'POST'])
 def ask_question():
     question = request.json.get('input_question')
     answer, best_paragraph, url = answer_question(question)
-    return jsonify({'link': url, 'text_paragraphs': best_paragraph, 'albert': answer})
+    return jsonify({'link': url, 'text_paragraphs': best_paragraph, 'answer': answer})
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5001)

@@ -1,0 +1,271 @@
+/* Resets and Base */
+html, body, ol, ul, li, h1, h2, h3 {
+  margin: 0;
+}
+
+ol, ul, li {
+  padding: 0;
+  list-style-type: none;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Mixins */
+body {
+  background: #E66;
+}
+
+.window {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+@media (min-width: 720px) {
+  .window {
+    width: 50%;
+    min-width: 650px;
+    height: calc(100vh - 70px);
+    margin: 35px auto;
+  }
+}
+.window .windowFrame {
+  width: 100%;
+  height: 35px;
+  background: #EEE;
+  border-radius: 0;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 0;
+  display: inline-block;
+}
+@media (min-width: 720px) {
+  .window .windowFrame {
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+  }
+}
+.window .windowFrame .windowTools {
+  width: 100%;
+  height: 35px;
+  font-size: 0;
+  position: relative;
+  display: inline-block;
+}
+.window .windowFrame .windowTools .button {
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+}
+.window .windowFrame .windowTools .roundButton {
+  width: 0.75em;
+  height: 0.75em;
+  margin: 0 0.25em;
+  border-radius: 100%;
+  font-size: 1rem;
+}
+.window .windowFrame .windowTools .squareButton {
+  width: 1.25em;
+  height: 1.25em;
+  background: #FFF;
+  font-size: 1rem;
+  border-radius: .15em;
+}
+.window .windowFrame .windowTools .close, .window .windowFrame .windowTools .minimize, .window .windowFrame .windowTools .maximize {
+  display: none;
+}
+@media (min-width: 720px) {
+  .window .windowFrame .windowTools .close, .window .windowFrame .windowTools .minimize, .window .windowFrame .windowTools .maximize {
+    display: inline-block;
+  }
+}
+.window .windowFrame .windowTools .close {
+  background: #F65;
+  margin-left: 0.75em;
+}
+.window .windowFrame .windowTools .minimize {
+  background: #FB3;
+}
+.window .windowFrame .windowTools .maximize.roundButton {
+  background: #2C4;
+}
+.window .windowFrame .windowTools .maximize.squareButton {
+  position: absolute;
+  right: 0.75em;
+}
+.window .windowFrame .windowTools .maximize.squareButton:hover::before, .window .windowFrame .windowTools .maximize.squareButton:hover::after {
+  border-color: #666;
+}
+.window .windowFrame .windowTools .maximize.squareButton::before, .window .windowFrame .windowTools .maximize.squareButton::after {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  background: #FFF;
+  border: 2px solid #DDD;
+  position: absolute;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: block;
+}
+.window .windowFrame .windowTools .maximize.squareButton::before {
+  top: 0.18em;
+  right: 0.15em;
+}
+.window .windowFrame .windowTools .maximize.squareButton::after {
+  bottom: 0.18em;
+  left: 0.20em;
+}
+.window .windowFrame .windowTools .back:hover::before, .window .windowFrame .windowTools .forward:hover::before {
+  border-color: #666;
+}
+.window .windowFrame .windowTools .back::before, .window .windowFrame .windowTools .forward::before {
+  content: '';
+  width: 0.5em;
+  height: 0.5em;
+  border-top: 2px solid #DDD;
+  border-left: 2px solid #DDD;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: block;
+}
+.window .windowFrame .windowTools .back {
+  margin-right: 0.15em;
+  margin-left: 0.75em;
+}
+.window .windowFrame .windowTools .back::before {
+  margin: 0.35em 0.5em;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.window .windowFrame .windowTools .forward::before {
+  margin: 0.35em 0.25em;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.window .windowFrame form {
+  display: inline-block;
+}
+.window .windowFrame form .searchBar {
+  width: 60%;
+  height: 20px;
+  margin: 0 auto;
+  padding: 0 0.5em;
+  border: none;
+  border-radius: 0.15em;
+  outline: 0;
+  color: #666;
+  font-size: .65rem;
+  text-align: center;
+  position: absolute;
+  top: 0.75em;
+  right: 0;
+  left: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.window .windowFrame form .searchBar:focus {
+  text-align: left;
+}
+.window .windowDisplay, .window .webPageDisplay {
+  width: 100%;
+  border-radius: 0;
+}
+@media (min-width: 720px) {
+  .window .windowDisplay, .window .webPageDisplay {
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+  }
+}
+.window .windowDisplay {
+  height: calc(100% - 35px);
+  background: #DDD;
+  border-top: 1px solid #DDD;
+  position: relative;
+  top: 35px;
+}
+.window .windowDisplay .webPageDisplay {
+  height: 100%;
+  border: 0;
+}
+
+.window.hide {
+  background: #DDD;
+  -webkit-transform: scale(0.125, 0.085);
+  -moz-transform: scale(0.125, 0.085);
+  -ms-transform: scale(0.125, 0.085);
+  -o-transform: scale(0.125, 0.085);
+  transform: scale(0.125, 0.085);
+}
+.window.hide * {
+  display: none;
+}
+
+.window.full {
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0;
+}
+.window.full .windowFrame, .window.full .windowDisplay, .window.full .webPageDisplay {
+  border-radius: 0;
+}
+.window.full .windowDisplay {
+  height: calc(100% + 35px);
+}
+
+.screenNavigation {
+  width: 100%;
+  height: 35px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+}
+.screenNavigation .screenTab {
+  width: 2.25em;
+  height: 100%;
+  background: #DDD;
+  display: none;
+}
+.screenNavigation .browserIcon {
+  position: relative;
+  cursor: pointer;
+}
+.screenNavigation .browserIcon::before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  margin: 0 auto;
+  background: #2C4;
+  border-radius: 100%;
+  position: absolute;
+  top: 0.65em;
+  right: 0;
+  left: 0;
+  display: block;
+}

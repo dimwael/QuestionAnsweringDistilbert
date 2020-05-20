@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Question Answering ML Tool</title>
+  <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+  <link rel="stylesheet" href="./style.css">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</head>
+
+<body style="background-color: dimgray;">
+  <!-- partial:index.partial.html -->
+  <article class="window">
+    <div class="windowFrame">
+      <div class="windowTools">
+        <div class="minimize roundButton button"></div>
+        <div class="maximize roundButton button"></div>
+        <div class="back squareButton button"></div>
+        <div class="forward squareButton button"></div>
+        <div class="maximize squareButton button"></div>
+      </div>
+      <form method="get">
+        <input class="searchBar" type="text" value="Search Wikipedia">
+      </form>
+    </div>
+    <div class="windowDisplay" id="windowDisplay" style="height: -moz-fit-content  ! important;">
+
+    </div>
+  </article>
+
+  <article class="screenNavigation">
+    <div class="screenTab browserIcon"></div>
+  </article>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

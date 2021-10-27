@@ -6,9 +6,9 @@ This is a Python project for dealing with simple questions about general knowled
 
 1-Clone the project
 
-2-Rename the app.py to app-backup.py
+2-Rename the __app.py__ to __app-backup.py__
 
-3-Rename the app-localhost.py to app.py
+3-Rename the __app-localhost.py__ to __app.py__
 
 4-Install dependencies by running the following command:
 ```bash
@@ -22,18 +22,18 @@ pip install -r requirements.txt
 ```bash
 docker build -t  qa-distilbert:v1 .
 ```
-3-Add a new Inbound rule for the TCP Port 5000
+3-Add a new __Inbound rule__ for the __TCP Port 5000__
 
 4-Run the image:
 ```bash
 docker-compose up -d
 ```
-5-The container could use some time before it becomes accessible < 50 sec
+5-The container could use __some time__ before it becomes accessible < __50 sec__
 
-6-You should be able to access the app on "INSTANCE-PUBLIC-IP":5000 
+6-You should be able to access the app on __"INSTANCE-PUBLIC-IP":5000__
 
-PS: You can always make sure to use the app.py designed for the public access by renaming 
-the (app.py to app-backup.py) and then renaming the (app-public.py to app.py)
+PS: You can always make sure to use the __app.py designed for the public access__ by renaming 
+the __(app.py to app-backup.py)__ and then renaming the __(app-public.py to app.py)__
 
 ## Usage
 
